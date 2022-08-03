@@ -1,16 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import Background from './Background';
 import Loading from './Loading';
 
-const Weather = ({lat,lon}) => {
+const Weather = ({lat,lon,setBackgroundChage}) => {
 
     
     const [DataWeather, setDataWeather] = useState()
     const [Temp, setTemp] = useState()
     const [IsCellsius, setIsCellsius] = useState(true)
     const [IsLoading, setIsLoading] = useState(true)
-    const [ImgWeather, setImgWeather] = useState()
+    
 
 
     useEffect(() =>{
@@ -28,25 +27,23 @@ const Weather = ({lat,lon}) => {
                 }
                 setTemp(temp)
                 setIsLoading(!IsLoading)
-                setImgWeather(res.data.weather[0].icon)
+                setBackgroundChage(res.data.weather[0].icon)
 
             })
             .catch(err => err)
         }
-    },[lat])
-        console.log(ImgWeather);
+    },[lat,lon])
+        
         const ChangeTemp = () => setIsCellsius(!IsCellsius)
 
     console.log(DataWeather);
-    // console.log(Temp);
 
     if(IsLoading){
-        <Loading/>
+       return <Loading/>
     }else{
 
         return (
         <div>
-            <Background/>
           <article className='cont_weather'>
               <h1>Weather App</h1>
               <h2>{DataWeather?.name}, {DataWeather?.sys.country}</h2>

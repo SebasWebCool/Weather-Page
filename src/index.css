@@ -10,11 +10,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(https://cdn.wallpapersafari.com/62/74/a2jd0u.jpg);
-    background-size: 100%;
-    background-position: cover;
+    /* background-image: url(https://cdn.wallpapersafari.com/62/74/a2jd0u.jpg); */
+    background-size: cover;
+    background-position: center;
     
-
 }
 .cont_weather{
     width: 50vw;
@@ -73,7 +72,7 @@ li{
 
 /* Loading Page */
 
-.loading{
+.Loading{
     width: 100%;
     height: 100vh;
     display: flex;
@@ -82,13 +81,3 @@ li{
     background-color: black;
     color: white;
 }
-/* Background */
-/* .MainBackground{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: blue;
-    opacity: .25;
-    z-index: 1;
-} */
