@@ -36,7 +36,7 @@ const Weather = ({lat,lon,setBackgroundChage}) => {
         
         const ChangeTemp = () => setIsCellsius(!IsCellsius)
 
-    console.log(DataWeather);
+    // console.log(DataWeather);
 
     if(IsLoading){
        return <Loading/>
@@ -50,7 +50,6 @@ const Weather = ({lat,lon,setBackgroundChage}) => {
               
               <div className='cont_inf'>
                   <div className='cont_img'>
-      
                       <img src={DataWeather && ` http://openweathermap.org/img/wn/${DataWeather?.weather[0].icon}@4x.png`} alt="" />
                   </div>
                   <div className='items_list'>
